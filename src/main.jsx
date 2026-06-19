@@ -4,6 +4,10 @@ import './index.css'
 import { createBrowserRouter } from "react-router";
 import { RouterProvider } from "react-router/dom";
 import RooteLayout from './layout/RootLayout';
+import Apps from './pages/apps/Apps';
+import HomePage from './pages/homepages/HomePage';
+import InstalledApps from './pages/installApps/InstallApps';
+import NotFoundPage from './pages/NotFoundPage/NotFoundPage';
 
 const router = createBrowserRouter([
   {
@@ -12,17 +16,21 @@ const router = createBrowserRouter([
     children: [
         {
           index:true,
-          element: <h2>Homepage</h2>
+          Component: HomePage,
         },
 
         {
           path:"/apps",
-          element: <h2>Apps</h2>
-        }
-    ],
-     errorElement: <h2>This page is not found</h2>
-  },
+          Component:Apps
+        },
 
+         {
+          path:'/installedApps',
+          Component: InstalledApps,
+         } 
+    ],
+     errorElement: <NotFoundPage/>,
+  }
 ]);
 
 createRoot(document.getElementById('root')).render(
