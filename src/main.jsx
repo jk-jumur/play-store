@@ -5,7 +5,7 @@ import { createBrowserRouter } from "react-router";
 import { RouterProvider } from "react-router/dom";
 import RooteLayout from './layout/RootLayout';
 import Apps from './pages/apps/Apps';
-import HomePage from './pages/homepages/HomePage';
+import HomePage from './pages/homepage/HomePage';
 import InstalledApps from './pages/installApps/InstallApps';
 import NotFoundPage from './pages/NotFoundPage/NotFoundPage';
 
