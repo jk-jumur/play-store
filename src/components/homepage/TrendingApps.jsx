@@ -17,7 +17,7 @@ const TrendingApps = () => {
       </div>
 
     {loading ? (
-         <h2>Loading...</h2>
+        <span className="loading loading-bars loading-lg"></span>
         // <div className="flex justify-center items-center">
         //   <HashLoader color="#ad46ff" />
         // </div>

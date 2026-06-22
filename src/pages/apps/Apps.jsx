@@ -18,8 +18,7 @@ const Apps = () => {
 
        {loading ? (
         <div className="flex justify-center items-center">
-          {/* <HashLoader color="#ad46ff" /> */}
-            <h2>Loading...</h2>
+          <span className="loading loading-bars loading-lg bg-purple-900"></span>
         </div>
       ) : (
         <div className="grid grid-cols-3 gap-5">
