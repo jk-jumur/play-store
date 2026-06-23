@@ -1,7 +1,9 @@
-// import useApps from "../../components/hooks/useApps";
+
 import { useParams } from "react-router";
 import useApps from "../../components/hooks/useApps";
-import { useState } from "react";
+import { useContext } from "react";
+import { InstalledAppsContext } from "../../context/InstalledAppsContext";
+import { toast } from "react-toastify";
 
 const AppDetails = () => {
   const { id } = useParams();
@@ -9,7 +11,7 @@ const AppDetails = () => {
 
   const expectedApp = apps.find(app => String(app.id) === String(id));
 
-      const [installedApps, setInstalledApps] = useState([]);
+      const {installedApps, setInstalledApps} = useContext(InstalledAppsContext);
 
   if (loading) {
     return <div className="text-center mt-10"><span className="loading loading-bars loading-lg bg-pink-500"></span></div>;
@@ -21,6 +23,7 @@ const AppDetails = () => {
 
   const handleInstalledApp = () => {
        setInstalledApps([...installedApps, expectedApp]);
+       toast.success(` ${expectedApp.title} App Is Installed`);
   }
 
   console.log(installedApps, "installedApps");
