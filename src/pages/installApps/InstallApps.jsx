@@ -18,7 +18,7 @@ const InstallApps = () => {
            
 
             {
-                installedApps.map((app, ind) => {
+                installedApps.length === 0 ? <h2 className="fon t-bold text-4xl text-center my-5">No Installed Apps Found!</h2> :     installedApps.map((app, ind) => {
                       return <div key={ind} className="flex gap-4 items-center justify-between shadow p-4 rounded-md bg-slate-200 m-6">
                          <div>
                               <img src={app.image}
